@@ -72,19 +72,20 @@
 </div>
 
 <script>
-    let kirjautunut = false;
+    let kirjautunut = sessionStorage.getItem("kirjautunut") === "true";
 
     const lataaNappi = document.getElementById("lataaNappi");
     const popup = document.getElementById("popup-tausta");
 
     lataaNappi.addEventListener("click", function(event) {
-        event.preventDefault();
-        popup.style.display = "flex"; 
+        if (!kirjautunut) {
+            event.preventDefault();
+            popup.style.display = "flex";
+        } else {
+            window.location.href = "https://store.steampowered.com/app/730/CounterStrike_2/?l=finnish";
+        }
     });
 </script>
 
-
-
 </body>
 </html>
-
