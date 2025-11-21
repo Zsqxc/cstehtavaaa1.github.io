@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirjaudu</title>
+
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .laatikko {
+            background: #1f1f1f;
+            padding: 30px;
+            width: 350px;
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 0 20px #000;
+            border: 2px solid #444;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 12px;
+            background: #2a2a2a;
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .nappi {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            font-size: 18px;
+            background: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .nappi:hover {
+            background: #3a78c5;
+        }
+
+        a {
+            color: #4a90e2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="laatikko">
+    <h2>Kirjaudu sisään</h2>
+
+    <form onsubmit="event.preventDefault(); window.location.href='etusivu.html';">
+
+        <input type="text" placeholder="Käyttäjänimi tai sähköposti" required>
+        <input type="password" placeholder="Salasana" required>
+
+        <button class="nappi">Kirjaudu</button>
+    </form>
+
+    <p>Ei tiliä? <a href="register.html">Luo tili tästä</a></p>
+</div>
+
+<script>
+    function kirjaudu(event) {
+        event.preventDefault();
+        window.location.href = "etusivi.html";
+    }
+</script>
+
+</body>
+</html>
