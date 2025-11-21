@@ -69,28 +69,22 @@
 <div class="laatikko">
     <h2>Kirjaudu sisään</h2>
 
-    <form onsubmit="event.preventDefault(); window.location.href='index.html';">
-    <input type="text" placeholder="Käyttäjänimi tai sähköposti" required>
-    <input type="password" placeholder="Salasana" required>
+    <form onsubmit="kirjaudu(event)">
+        <input type="text" placeholder="Käyttäjänimi tai sähköposti" required>
+        <input type="password" placeholder="Salasana" required>
+        <button class="nappi">Kirjaudu</button>
+    </form>
 
-    <button class="nappi">Kirjaudu</button>
-</form>
-
-<p>Ei tiliä? <a href="register.html">Luo tili tästä</a></p>
-
+    <p>Ei tiliä? <a href="register.html">Luo tili tästä</a></p>
 </div>
 
 <script>
-    function kirjaudu(event) {
-        event.preventDefault();
-        window.location.href = "index.html";
-
-    }
+function kirjaudu(event) {
+    event.preventDefault();
+    sessionStorage.setItem("kirjautunut", "true");
+    window.location.href = "index.html";
+}
 </script>
 
 </body>
 </html>
-
-
-
-
