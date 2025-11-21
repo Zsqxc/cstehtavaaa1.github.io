@@ -69,23 +69,23 @@
 <div class="laatikko">
     <h2>Rekisteröidy</h2>
 
-    <form onsubmit="event.preventDefault(); window.location.href='index.html';">
-    <input type="text" placeholder="Käyttäjänimi" required>
-    <input type="email" placeholder="Sähköposti" required>
-    <input type="password" placeholder="Salasana" required>
+    <form onsubmit="rekisteroidy(event)">
+        <input type="text" placeholder="Käyttäjänimi" required>
+        <input type="email" placeholder="Sähköposti" required>
+        <input type="password" placeholder="Salasana" required>
+        <button class="nappi">Luo tili</button>
+    </form>
 
-    <button class="nappi">Luo tili</button>
-</form>
-
-<p>Onko sinulla jo tili? <a href="login.html">Kirjaudu tästä</a></p>
+    <p>Onko sinulla jo tili? <a href="login.html">Kirjaudu tästä</a></p>
 </div>
 
-
-
+<script>
+function rekisteroidy(event) {
+    event.preventDefault();
+    sessionStorage.setItem("kirjautunut", "true");
+    window.location.href = "index.html";
+}
+</script>
 
 </body>
 </html>
-
-
-
-
